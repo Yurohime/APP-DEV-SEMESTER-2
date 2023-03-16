@@ -1,0 +1,12 @@
+C:\Users\Lolz\source\repos\W3home\W3home\bin\Debug\W3home.exe.config
+C:\Users\Lolz\source\repos\W3home\W3home\bin\Debug\W3home.exe
+C:\Users\Lolz\source\repos\W3home\W3home\bin\Debug\W3home.pdb
+C:\Users\Lolz\source\repos\W3home\W3home\obj\Debug\W3home.csproj.AssemblyReference.cache
+C:\Users\Lolz\source\repos\W3home\W3home\obj\Debug\W3home.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lolz\source\repos\W3home\W3home\obj\Debug\W3home.Properties.Resources.resources
+C:\Users\Lolz\source\repos\W3home\W3home\obj\Debug\W3home.csproj.GenerateResource.cache
+C:\Users\Lolz\source\repos\W3home\W3home\obj\Debug\W3home.csproj.CoreCompileInputs.cache
+C:\Users\Lolz\source\repos\W3home\W3home\obj\Debug\W3home.exe
+C:\Users\Lolz\source\repos\W3home\W3home\obj\Debug\W3home.pdb
+C:\Users\Lolz\source\repos\W3home\W3home\obj\Debug\W3home.Second_Window_Form.resources
+C:\Users\Lolz\source\repos\W3home\W3home\obj\Debug\W3home.First_Window_Form.resources
