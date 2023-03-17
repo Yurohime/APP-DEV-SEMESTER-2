@@ -77,6 +77,7 @@
             this.radioButtonwhite.Size = new System.Drawing.Size(51, 16);
             this.radioButtonwhite.TabIndex = 10;
             this.radioButtonwhite.TabStop = true;
+            this.radioButtonwhite.Tag = "color";
             this.radioButtonwhite.Text = "White";
             this.radioButtonwhite.UseVisualStyleBackColor = true;
             // 
@@ -88,6 +89,7 @@
             this.radioButtonblack.Size = new System.Drawing.Size(52, 16);
             this.radioButtonblack.TabIndex = 9;
             this.radioButtonblack.TabStop = true;
+            this.radioButtonblack.Tag = "color";
             this.radioButtonblack.Text = "Black";
             this.radioButtonblack.UseVisualStyleBackColor = true;
             // 
@@ -99,6 +101,7 @@
             this.radioButtonyellow.Size = new System.Drawing.Size(56, 16);
             this.radioButtonyellow.TabIndex = 8;
             this.radioButtonyellow.TabStop = true;
+            this.radioButtonyellow.Tag = "color";
             this.radioButtonyellow.Text = "Yellow";
             this.radioButtonyellow.UseVisualStyleBackColor = true;
             // 
@@ -110,6 +113,7 @@
             this.radioButtonblue.Size = new System.Drawing.Size(46, 16);
             this.radioButtonblue.TabIndex = 7;
             this.radioButtonblue.TabStop = true;
+            this.radioButtonblue.Tag = "color";
             this.radioButtonblue.Text = "Blue";
             this.radioButtonblue.UseVisualStyleBackColor = true;
             // 
@@ -121,6 +125,7 @@
             this.radioButtonred.Size = new System.Drawing.Size(43, 16);
             this.radioButtonred.TabIndex = 6;
             this.radioButtonred.TabStop = true;
+            this.radioButtonred.Tag = "color";
             this.radioButtonred.Text = "Red";
             this.radioButtonred.UseVisualStyleBackColor = true;
             // 
@@ -142,6 +147,7 @@
             this.radioButtondark.Size = new System.Drawing.Size(47, 16);
             this.radioButtondark.TabIndex = 8;
             this.radioButtondark.TabStop = true;
+            this.radioButtondark.Tag = "text";
             this.radioButtondark.Text = "Dark";
             this.radioButtondark.UseVisualStyleBackColor = true;
             // 
@@ -153,6 +159,7 @@
             this.radioButtongray.Size = new System.Drawing.Size(47, 16);
             this.radioButtongray.TabIndex = 7;
             this.radioButtongray.TabStop = true;
+            this.radioButtongray.Tag = "text";
             this.radioButtongray.Text = "Gray";
             this.radioButtongray.UseVisualStyleBackColor = true;
             // 
@@ -164,6 +171,7 @@
             this.radioButtonlight.Size = new System.Drawing.Size(48, 16);
             this.radioButtonlight.TabIndex = 6;
             this.radioButtonlight.TabStop = true;
+            this.radioButtonlight.Tag = "text";
             this.radioButtonlight.Text = "Light";
             this.radioButtonlight.UseVisualStyleBackColor = true;
             // 

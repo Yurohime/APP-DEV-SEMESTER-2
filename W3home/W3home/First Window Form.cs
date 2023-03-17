@@ -34,13 +34,20 @@ namespace W3home
 
         private void button_submit_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms.OfType<Second_Window_Form>().Any() && checkBox_term.Checked)
+            if (!string.IsNullOrEmpty(textBox_name.Text) && !string.IsNullOrEmpty(textBox_artist.Text))
             {
-                second.Changename(textBox_name.Text, textBox_artist.Text);
+                if (Application.OpenForms.OfType<Second_Window_Form>().Any() && checkBox_term.Checked)
+                {
+                    second.Changename(textBox_name.Text, textBox_artist.Text);
+                }
+                else if (checkBox_term.Checked)
+                {
+                    MessageBox.Show("You need to open the second window and agree to the terms");
+                }
             }
-            else if (checkBox_term.Checked)
+            else
             {
-                MessageBox.Show("You havent fulfilled");
+                MessageBox.Show("you need to fill the name and artist");
             }
         }
         public void Changebackground(string color, string text)
