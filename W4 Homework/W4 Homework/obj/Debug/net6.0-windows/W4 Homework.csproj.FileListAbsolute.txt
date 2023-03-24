@@ -1,0 +1,17 @@
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\bin\Debug\net6.0-windows\W4 Homework.exe
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\bin\Debug\net6.0-windows\W4 Homework.deps.json
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\bin\Debug\net6.0-windows\W4 Homework.runtimeconfig.json
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\bin\Debug\net6.0-windows\W4 Homework.dll
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\bin\Debug\net6.0-windows\W4 Homework.pdb
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\obj\Debug\net6.0-windows\W4 Homework.csproj.AssemblyReference.cache
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\obj\Debug\net6.0-windows\W4_Homework.Form1.resources
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\obj\Debug\net6.0-windows\W4 Homework.csproj.GenerateResource.cache
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\obj\Debug\net6.0-windows\W4 Homework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\obj\Debug\net6.0-windows\W4 Homework.AssemblyInfoInputs.cache
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\obj\Debug\net6.0-windows\W4 Homework.AssemblyInfo.cs
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\obj\Debug\net6.0-windows\W4 Homework.csproj.CoreCompileInputs.cache
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\obj\Debug\net6.0-windows\W4 Homework.dll
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\obj\Debug\net6.0-windows\refint\W4 Homework.dll
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\obj\Debug\net6.0-windows\W4 Homework.pdb
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\obj\Debug\net6.0-windows\W4 Homework.genruntimeconfig.cache
+C:\Users\Lolz\source\repos\W4 Homework\W4 Homework\obj\Debug\net6.0-windows\ref\W4 Homework.dll
