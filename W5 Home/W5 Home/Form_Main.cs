@@ -13,7 +13,6 @@ namespace W5_Home
 {
     public partial class Form_Main : Form
     {
-        List<Items> itemlist = new List<Items>();
         DataTable dtProductSaved = new DataTable();
         DataTable dtProductFiltered = new DataTable();
         DataTable dtCategory = new DataTable();
@@ -41,11 +40,13 @@ namespace W5_Home
             dtCategory.Columns.Add("Category Name");
             viewer_category.DataSource = dtCategory;
             viewer_main.DataSource = dtProductFiltered;
+            
 
             Preset();
             PresetCatagory();
             Display(1);
             DisplayCategory();
+            ClearText();
         }
         //filter button
         private void button_filter_all_Click(object sender, EventArgs e)
@@ -66,10 +67,10 @@ namespace W5_Home
         //Other
         private void Preset()
         {
-            string[] product_name_list_preset = { "Apple's Shirt", "Apple's T-Shirt" ,"Bee's Style", "The Bomb", "A Literal Gun","Good Shirt","Sword","Chainmail"};
-            string[] product_cost_preset = { "100000","20000","45000","75000","250000", "750000", "125000", "75000" };
-            string[] product_stock_preset = { "20","300","34","678","34", "20", "140", "15" };
-            string[] product_category_preset = { "C1","C3","C1","C2","C4", "C1", "C4", "C5" };
+            string[] product_name_list_preset = { "Sword", "Flaming Sword" ,"Warhammer", "Apprentice Wand", "Chainmail","Musket","Iron Chestplate","Mage's Robe","Cursed Katana","OP Potion","Wizard's Rod"};
+            string[] product_cost_preset = { "100000","20000","45000","75000","250000", "750000", "125000", "75000","80000","999999","100000" };
+            string[] product_stock_preset = { "20","300","34","678","34", "20", "140", "15","20","1","90" };
+            string[] product_category_preset = { "C1","C3","C1","C2","C4", "C1", "C4", "C5","C3","C6","C2" };
             List<string> ID = new List<string>();
             for (int i = 0; i < product_name_list_preset.Length; i++)
             {
@@ -81,7 +82,7 @@ namespace W5_Home
         }
         private void PresetCatagory()
         {
-            string[] category_name = {"Shirt","Better Shirt","A Design","Weapon","Armor","Misc" };
+            string[] category_name = {"Phys Weapon","Magic Weapon","Hybrid Weapon","Phys Armor","Magic Armor","Misc" };
             string[] category_ID = {"C1","C2","C3","C4","C5","C6" };
             for (int i = 0; i < category_name.Length; i++)
             {
@@ -126,6 +127,8 @@ namespace W5_Home
             tbox_pro_name.Text = "";
             tbox_pro_stock.Text = "";
             cbox_pro_category.SelectedIndex = -1;
+            viewer_category.ClearSelection();
+            viewer_main.ClearSelection();
         }
         private string IDgetter(string name)
         {
@@ -209,36 +212,51 @@ namespace W5_Home
         }
         private void button_cat_remove_Click(object sender, EventArgs e)
         {
-            string category = dtCategory.Rows[viewer_category.CurrentCell.RowIndex][0].ToString();
-            string category_named = dtCategory.Rows[viewer_category.CurrentCell.RowIndex][1].ToString();
-            for (int i = 0; i < dtProductSaved.Rows.Count; i++)
+            if (tbox_cat_name.Text != "")
             {
-                if (category == dtProductSaved.Rows[i][4].ToString())
+                string category = dtCategory.Rows[viewer_category.CurrentCell.RowIndex][0].ToString();
+                string category_named = dtCategory.Rows[viewer_category.CurrentCell.RowIndex][1].ToString();
+                for (int i = 0; i < dtProductSaved.Rows.Count; i++)
                 {
-                    dtProductSaved.Rows.RemoveAt(i);
+                    if (category == dtProductSaved.Rows[i][4].ToString())
+                    {
+                        dtProductSaved.Rows.RemoveAt(i);
+                    }
                 }
+                cbox_filter.SelectedIndex = -1;
+                Display(selected_filter_state);
+                dtCategory.Rows.RemoveAt(viewer_category.CurrentCell.RowIndex);
+                cbox_filter.Items.Add(category_named);
+                cbox_pro_category.Items.Add(category_named);
+                ClearText();
             }
-            cbox_filter.SelectedIndex = -1;
-            Display(selected_filter_state);
-            dtCategory.Rows.RemoveAt(viewer_category.CurrentCell.RowIndex);
-            cbox_filter.Items.Add(category_named);
-            cbox_pro_category.Items.Add(category_named);
-            ClearText();
+            else
+            {
+                MessageBox.Show("Error, please input a valid option");
+            }
         }
         private void button_add_remove_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < dtCategory.Rows.Count; i++)
+            if (dtProductFiltered.Rows[viewer_main.CurrentCell.RowIndex][0].ToString() != null && tbox_pro_name.Text != "" && tbox_pro_stock.Text != "" && tbox_pro_cost.Text != "" && cbox_pro_category.SelectedIndex != -1)
             {
-
-                if (dtProductSaved.Rows[i][0].ToString() == dtProductFiltered.Rows[viewer_main.CurrentCell.RowIndex][0].ToString())
+                for (int i = 0; i < dtCategory.Rows.Count; i++)
                 {
-                    dtProductSaved.Rows.RemoveAt(i);
-                    Display(1);
-                    ClearText();
-                    break;
+
+                    if (dtProductSaved.Rows[i][0].ToString() == dtProductFiltered.Rows[viewer_main.CurrentCell.RowIndex][0].ToString())
+                    {
+                        dtProductSaved.Rows.RemoveAt(i);
+                        Display(1);
+                        ClearText();
+                        break;
+                    }
                 }
+                cbox_filter.SelectedIndex = -1;
             }
-            cbox_filter.SelectedIndex = -1;
+            else
+            {
+                MessageBox.Show("Error, not a valid input");
+            }
+
         }
         private void button_pro_add_Click(object sender, EventArgs e)
         {
@@ -265,7 +283,7 @@ namespace W5_Home
             for (int i = 0; i < dtCategory.Rows.Count; i++)
             {
 
-                if (dtProductSaved.Rows[i][0].ToString() == dtProductFiltered.Rows[viewer_main.CurrentCell.RowIndex][0].ToString())
+                if (dtProductSaved.Rows[i][0].ToString() == viewer_main.CurrentRow.Cells[0].Value.ToString())
                 {
                     dtProductSaved.Rows[i][1] = tbox_pro_name.Text;
                     dtProductSaved.Rows[i][2] = tbox_pro_cost.Text;
@@ -279,19 +297,36 @@ namespace W5_Home
         }
         private void viewer_main_click(object sender, DataGridViewCellMouseEventArgs e)
         {
-            tbox_pro_name.Text = dtProductFiltered.Rows[viewer_main.CurrentCell.RowIndex][1].ToString();
-            int counter = 0;
-            for (int i = 0; i < dtCategory.Rows.Count; i++)
+            for (int j = 0; j < dtProductSaved.Rows.Count; j++)
             {
-
-                if (dtCategory.Rows[i][1].ToString() == dtProductFiltered.Rows[viewer_main.CurrentCell.RowIndex][4].ToString())
+                if (dtProductSaved.Rows[j][0].ToString() == viewer_main.CurrentRow.Cells[0].Value.ToString())
                 {
-                    cbox_pro_category.SelectedIndex = counter;
+                    tbox_pro_name.Text = dtProductSaved.Rows[j][1].ToString();
+                    int counter = 0;
+                    for (int i = 0; i < dtCategory.Rows.Count; i++)
+                    {
+                        if (dtCategory.Rows[i][0].ToString() == dtProductSaved.Rows[j][4].ToString())
+                        {
+                            cbox_pro_category.SelectedIndex = counter;
+                        }
+                        counter++;
+                    }
+                    tbox_pro_stock.Text = dtProductSaved.Rows[j][3].ToString();
+                    tbox_pro_cost.Text = dtProductSaved.Rows[j][2].ToString();
                 }
-                counter++;
             }
-            tbox_pro_stock.Text = dtProductFiltered.Rows[viewer_main.CurrentCell.RowIndex][3].ToString();
-            tbox_pro_cost.Text = dtProductFiltered.Rows[viewer_main.CurrentCell.RowIndex][2].ToString();
+            
+        }
+
+        private void Form_Load(object sender, EventArgs e)
+        {
+            viewer_category.ClearSelection();
+            viewer_main.ClearSelection();
+        }
+
+        private void Category_click(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            tbox_cat_name.Text = viewer_category.CurrentRow.Cells["Category Name"].Value.ToString();
         }
     }
 }

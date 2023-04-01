@@ -72,6 +72,7 @@
             this.viewer_category.RowTemplate.Height = 21;
             this.viewer_category.Size = new System.Drawing.Size(240, 150);
             this.viewer_category.TabIndex = 1;
+            this.viewer_category.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Category_click);
             // 
             // label1
             // 
@@ -291,6 +292,7 @@
             this.Controls.Add(this.viewer_main);
             this.Name = "Form_Main";
             this.Text = "Form_Main";
+            this.Load += new System.EventHandler(this.Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewer_main)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewer_category)).EndInit();
             this.ResumeLayout(false);
