@@ -1,0 +1,12 @@
+C:\Users\Lolz\source\repos\W6 Home\W6 Home\bin\Debug\W6 Home.exe.config
+C:\Users\Lolz\source\repos\W6 Home\W6 Home\bin\Debug\W6 Home.exe
+C:\Users\Lolz\source\repos\W6 Home\W6 Home\bin\Debug\W6 Home.pdb
+C:\Users\Lolz\source\repos\W6 Home\W6 Home\obj\Debug\W6 Home.csproj.AssemblyReference.cache
+C:\Users\Lolz\source\repos\W6 Home\W6 Home\obj\Debug\W6 Home.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lolz\source\repos\W6 Home\W6 Home\obj\Debug\W6_Home.Form1.resources
+C:\Users\Lolz\source\repos\W6 Home\W6 Home\obj\Debug\W6_Home.FormGame.resources
+C:\Users\Lolz\source\repos\W6 Home\W6 Home\obj\Debug\W6_Home.Properties.Resources.resources
+C:\Users\Lolz\source\repos\W6 Home\W6 Home\obj\Debug\W6 Home.csproj.GenerateResource.cache
+C:\Users\Lolz\source\repos\W6 Home\W6 Home\obj\Debug\W6 Home.csproj.CoreCompileInputs.cache
+C:\Users\Lolz\source\repos\W6 Home\W6 Home\obj\Debug\W6 Home.exe
+C:\Users\Lolz\source\repos\W6 Home\W6 Home\obj\Debug\W6 Home.pdb
