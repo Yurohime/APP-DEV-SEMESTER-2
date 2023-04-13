@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Microsoft.Win32.SafeHandles;
+using MySql.Data.MySqlClient;
+
+namespace WindowsFormsApp3
+{
+    
+    public partial class Form1 : Form
+    {
+        string mysqlconnection = "server=localhost;uid=root;database=premier_league";
+        MySqlConnection conn;
+        MySqlCommand cmd;
+        MySqlDataAdapter adapter;
+        string mysqlquary;
+        DataTable dt = new DataTable();
+        DataTable dtfilter = new DataTable();
+        DataTable dtnationality = new DataTable();
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            mysqlquary = "SELECT player_name as 'Player Name', team_number as 'Team Number', playing_pos as 'Position',height, weight, birthdate FROM player p;";
+            conn = new MySqlConnection(mysqlconnection);
+            cmd = new MySqlCommand(mysqlquary, conn);
+            adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            viewer_player.DataSource = dt;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            mysqlquary = "SELECT player_name as 'Player Name', team_number as 'Team Number', playing_pos as 'Position',height, weight, birthdate FROM player p;";
+            conn = new MySqlConnection(mysqlconnection);
+            cmd = new MySqlCommand(mysqlquary, conn);
+            adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(dt);
+            viewer_player.DataSource = dt;
+
+            mysqlquary = "SELECT nationality_id as 'ID', nation as 'Nation' FROM nationality n;";
+            conn = new MySqlConnection(mysqlconnection);
+            cmd = new MySqlCommand(mysqlquary, conn);
+            adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(dtnationality);
+            cbox_nation.DataSource = dtnationality;
+            cbox_nation.ValueMember = "ID";
+            cbox_nation.DisplayMember = "Nation";
+        }
+
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            label_dis.Text = "Selected Nation: " +  cbox_nation.SelectedItem.ToString();
+            label_val.Text = "Selected ID: "+cbox_nation.SelectedValue.ToString();
+
+            DataTable dtnew = new DataTable();
+            mysqlquary = $"SELECT player_name as 'Player Name', team_number as 'Team Number', playing_pos as 'Position',height, weight, birthdate FROM player p WHERE nationality_id = '{cbox_nation.SelectedValue.ToString()}';";
+            conn = new MySqlConnection(mysqlconnection);
+            cmd = new MySqlCommand(mysqlquary, conn);
+            adapter = new MySqlDataAdapter(cmd);
+            adapter.Fill(dtnew);
+            viewer_player.DataSource = dtnew;
+
+        }
+    }
+}
