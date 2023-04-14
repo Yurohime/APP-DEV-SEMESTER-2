@@ -1,0 +1,14 @@
+C:\Users\Lolz\source\repos\W7 Home II\W7 Home II\bin\Debug\W7 Home II.exe.config
+C:\Users\Lolz\source\repos\W7 Home II\W7 Home II\bin\Debug\W7 Home II.exe
+C:\Users\Lolz\source\repos\W7 Home II\W7 Home II\bin\Debug\W7 Home II.pdb
+C:\Users\Lolz\source\repos\W7 Home II\W7 Home II\obj\Debug\W7 Home II.csproj.AssemblyReference.cache
+C:\Users\Lolz\source\repos\W7 Home II\W7 Home II\obj\Debug\W7 Home II.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lolz\source\repos\W7 Home II\W7 Home II\obj\Debug\W7_Home_II.Form1.resources
+C:\Users\Lolz\source\repos\W7 Home II\W7 Home II\obj\Debug\W7_Home_II.Properties.Resources.resources
+C:\Users\Lolz\source\repos\W7 Home II\W7 Home II\obj\Debug\W7 Home II.csproj.GenerateResource.cache
+C:\Users\Lolz\source\repos\W7 Home II\W7 Home II\obj\Debug\W7 Home II.csproj.CoreCompileInputs.cache
+C:\Users\Lolz\source\repos\W7 Home II\W7 Home II\obj\Debug\W7 Home II.exe
+C:\Users\Lolz\source\repos\W7 Home II\W7 Home II\obj\Debug\W7 Home II.pdb
+C:\Users\Lolz\source\repos\W7 Home II\W7 Home II\obj\Debug\W7_Home_II.FromMovieList.resources
+C:\Users\Lolz\source\repos\W7 Home II\W7 Home II\obj\Debug\W7_Home_II.FormDebug.resources
+C:\Users\Lolz\source\repos\W7 Home II\W7 Home II\obj\Debug\W7_Home_II.FormSeat.resources
