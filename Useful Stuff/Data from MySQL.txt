@@ -1,0 +1,92 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Microsoft.Win32.SafeHandles;
+using MySql.Data.MySqlClient;
+
+namespace W8
+{
+    public partial class FormTeamData : Form
+    {
+        string mysqlconnection = "server=localhost;uid=root;database=premier_league";
+        MySqlConnection myconnection;
+        MySqlCommand mycommand;
+        MySqlDataAdapter myadapter;
+        string mysqlquary;
+        DataTable dt = new DataTable();
+        DataTable dtfilter = new DataTable();
+        DataTable dtnationality = new DataTable();
+        
+
+        string managerid = "";
+        public FormTeamData()
+        {
+            InitializeComponent();
+        }
+        public Form1 FormRef { get; set; }
+
+        private void FormTeamData_Load(object sender, EventArgs e)
+        {
+            mysqlquary = "SELECT team_id as 'ID',team_name as 'Team', m.manager_id, m.birthdate ,n.nation FROM team t,manager m ,nationality n where m.manager_id = t.manager_id and n.nationality_id = m.nationality_id;";
+            myconnection = new MySqlConnection(mysqlconnection);
+            mycommand = new MySqlCommand(mysqlquary, myconnection);
+            myadapter = new MySqlDataAdapter(mycommand);
+            myadapter.Fill(dtnationality);
+            cbox_team.DataSource = dtnationality;
+            cbox_team.ValueMember = "ID";
+            cbox_team.DisplayMember = "Team";
+
+        }
+
+        private void commit(object sender, EventArgs e)
+        {
+
+            DataTable dtmanager = new DataTable();
+            DataTable dtyolo = new DataTable();
+
+            int id = 0;
+            for(int i = 0;i < dtnationality.Rows.Count;i++)
+            {
+                if (dtnationality.Rows[i][1].ToString() == dtnationality.Rows[cbox_team.SelectedIndex][1].ToString())
+                {
+                    id = i;
+                    break;
+                }
+            }
+
+            managerid = dtnationality.Rows[id][2].ToString();
+
+            mysqlquary = $"SELECT manager_name , manager_id FROM manager where manager_id = '{managerid}';";
+            myconnection = new MySqlConnection(mysqlconnection);
+            mycommand = new MySqlCommand(mysqlquary, myconnection);
+            myadapter = new MySqlDataAdapter(mycommand);
+            myadapter.Fill(dtmanager);
+            //label_manager.Text = "Manager: "+ dtmanager.Rows[0][0].ToString() + " "+ dtnationality.Rows[cbox_team.SelectedIndex][3].ToString() + " "+ dtnationality.Rows[cbox_team.SelectedIndex][4].ToString();
+            dtyolo.Columns.Add("Team Name");
+            dtyolo.Columns.Add("Manager Name");
+            dtyolo.Columns.Add("Birth Date");
+            dtyolo.Columns.Add("Nationality");
+            dtyolo.Rows.Add(dtnationality.Rows[cbox_team.SelectedIndex][1].ToString(), dtmanager.Rows[0][0].ToString(), dtnationality.Rows[cbox_team.SelectedIndex][3].ToString() , dtnationality.Rows[cbox_team.SelectedIndex][4].ToString());
+            dgv_manager.DataSource = dtyolo;
+
+            DataTable dtnew = new DataTable();
+            mysqlquary = $"SELECT player_name as 'Player Name', team_number as 'Team Number', playing_pos as 'Position',height, weight, birthdate FROM player p WHERE team_id = '{cbox_team.SelectedValue.ToString()}';";
+            myconnection = new MySqlConnection(mysqlconnection);
+            mycommand = new MySqlCommand(mysqlquary, myconnection);
+            myadapter = new MySqlDataAdapter(mycommand);
+            myadapter.Fill(dtnew);
+            dgv_main.DataSource = dtnew;
+        }
+
+        private void buttonback_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
