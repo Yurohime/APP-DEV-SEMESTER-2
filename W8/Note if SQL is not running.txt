@@ -1,0 +1,2 @@
+Tools --> nuGet Package Manager --> Manage NuGet Package for Solution --> Browse --> Download MySQL.Data 
+there
