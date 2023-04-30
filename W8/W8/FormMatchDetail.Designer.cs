@@ -103,7 +103,7 @@
             // 
             this.labeldate.AutoSize = true;
             this.labeldate.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labeldate.Location = new System.Drawing.Point(8, 72);
+            this.labeldate.Location = new System.Drawing.Point(8, 73);
             this.labeldate.Name = "labeldate";
             this.labeldate.Size = new System.Drawing.Size(42, 16);
             this.labeldate.TabIndex = 18;
@@ -113,7 +113,7 @@
             // 
             this.labelref.AutoSize = true;
             this.labelref.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelref.Location = new System.Drawing.Point(8, 91);
+            this.labelref.Location = new System.Drawing.Point(8, 92);
             this.labelref.Name = "labelref";
             this.labelref.Size = new System.Drawing.Size(63, 16);
             this.labelref.TabIndex = 19;

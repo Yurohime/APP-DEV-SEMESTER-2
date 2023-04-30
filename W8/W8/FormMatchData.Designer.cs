@@ -40,7 +40,6 @@
             this.labelawayteamname = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_matchview = new System.Windows.Forms.Button();
-            this.btn_howtouse = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_home)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_away)).BeginInit();
             this.SuspendLayout();
@@ -155,21 +154,11 @@
             this.btn_matchview.UseVisualStyleBackColor = true;
             this.btn_matchview.Click += new System.EventHandler(this.btn_matchview_Click);
             // 
-            // btn_howtouse
-            // 
-            this.btn_howtouse.Location = new System.Drawing.Point(409, 20);
-            this.btn_howtouse.Name = "btn_howtouse";
-            this.btn_howtouse.Size = new System.Drawing.Size(75, 23);
-            this.btn_howtouse.TabIndex = 14;
-            this.btn_howtouse.Text = "How to Use";
-            this.btn_howtouse.UseVisualStyleBackColor = true;
-            // 
             // FormMatchData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 368);
-            this.Controls.Add(this.btn_howtouse);
             this.Controls.Add(this.btn_matchview);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelawayteamname);
@@ -206,6 +195,5 @@
         private System.Windows.Forms.Label labelawayteamname;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_matchview;
-        private System.Windows.Forms.Button btn_howtouse;
     }
 }

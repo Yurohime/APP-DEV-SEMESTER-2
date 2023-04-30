@@ -48,8 +48,8 @@ namespace W8
             myadapter.Fill(dtmatchdata);
 
             string[] datapieces = data.Split('-');
-            labelhome.Text = $"Home team: {datapieces[0]} Score: {dtmatchdata.Rows[0][1].ToString()}";
-            labelaway.Text = $"Away team: {datapieces[1]} Score: {dtmatchdata.Rows[0][2].ToString()}";
+            labelhome.Text = $"Home: {datapieces[0]} Score: {dtmatchdata.Rows[0][1].ToString()}";
+            labelaway.Text = $"Away: {datapieces[1]} Score: {dtmatchdata.Rows[0][2].ToString()}";
             labeldate.Text = $"Date: {dtmatchdata.Rows[0][0].ToString()}";
             labelref.Text = $"Referee: {dtmatchdata.Rows[0][3].ToString()}";
 
