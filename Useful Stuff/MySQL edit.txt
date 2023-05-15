@@ -1,0 +1,18 @@
+string command = the thing
+try
+{
+sqlconnection.open()
+sqlcommand = new shit
+sqlDataReader = sqlCommand.ExecuteReader();
+}
+catch
+{
+}
+finally
+{
+sqlconnection.Close();
+}
+
+
+the thing
+insert into xxxx values xxxx xxxx xxxx
